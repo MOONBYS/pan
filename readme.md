@@ -91,7 +91,7 @@ Download the genesis file into ~/.pan/config/
 cd .pan/config
 ```
 ```
-wget urlcomingsoon
+wget https://moonbys.com/pan-chain/genesis.json
 ```
 
 Add the published node ID and IP into the configuration file:
