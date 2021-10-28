@@ -73,6 +73,8 @@ You will also be asked to create a password.
 
 Make sure that you save your mnemonic phrase in a secure place, never share it with anyone and don't forget your keyring password.
 
+To get some test tokens, scroll down and join our MOONBYS Discord server or Telegram chat. Ask for some test tokens there.  
+
 ### Launch your Node
 
 ```
@@ -107,7 +109,7 @@ persistent_peers = "529ccadf9b1443dd64edc447d28392f8db1e2239@139.59.167.214:2665
 While you are in the config.toml file, go ahead and change the following line:
 
 ```
-# A custom human readablename for this node
+# A custom human readable name for this node
 moniker = "YourNodeNameHere"
 ```
 Adjust fees
