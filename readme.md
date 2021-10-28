@@ -141,7 +141,9 @@ moonbys start
 
 ## Become a validator in the MOONBYS.com Pan Blockchain
 
-Guide coming soon or explore the moonbys binary meanwhile or the docs below.
+Guide coming soon 
+
+Meanwhile, you can explore the moonbys binary or the docs below.
 
 ***
 
