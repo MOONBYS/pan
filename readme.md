@@ -135,13 +135,13 @@ moonbys start
 
 ***
 
-## Congratulations, you are now part of the MOONBYS.com Pan Blockhain
+## Congratulations, you are now part of the MOONBYS.com Pan Blockchain
 
 ***
 
 ## Become a validator in the MOONBYS.com Pan Blockchain
 
-Guide coming soon or explore the moonbys binary meanwhile
+Guide coming soon or explore the moonbys binary meanwhile or the docs below.
 
 ***
 
