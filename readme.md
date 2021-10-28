@@ -73,7 +73,7 @@ You will also be asked to create a password.
 
 Make sure that you save your mnemonic phrase in a secure place, never share it with anyone and don't forget your keyring password.
 
-To get some test tokens, scroll down and join our MOONBYS Discord server or Telegram chat. Ask for some test tokens there.  
+To get some test tokens, scroll down and join the MOONBYS Discord server or the MOONBYS Telegram chat. Ask for some test tokens there.  
 
 ### Launch your Node
 
