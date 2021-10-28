@@ -1,54 +1,153 @@
 # pan
-**pan** is a blockchain built using Cosmos SDK and Tendermint and created with [Starport](https://github.com/tendermint/starport).
+
+**pan** is the first MOONBYS.com public blockchain and it is a blockchain built using Cosmos SDK and Tendermint and created with [Starport](https://github.com/tendermint/starport).
+
+***
 
 ## Get started
 
+Install Go
+
 ```
-starport chain serve
+apt purge golang-go
+apt autoremove
+
+rm -rf /usr/local/go
+wget -c https://golang.org/dl/go1.17.1.linux-amd64.tar.gz
+tar xvf go1.17.1.linux-amd64.tar.gz -C /usr/local
+
+# Update environment variables to include go
+cat >> ~/.profile << 'EOF'
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export GO111MODULE=on
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
+EOF
+
+source ~/.profile
 ```
 
-`serve` command installs dependencies, builds, initializes, and starts your blockchain in development.
+Install Starport
+
+```
+curl https://get.starport.network/starport | bash
+```
+
+```
+sudo mv starport /usr/local/bin/
+```
+
+Clone this repository
+
+```
+git clone https://github.com/MOONBYS/pan.git
+```
+
+### Build your node
+
+```
+cd pan
+```
+```
+starport chain build
+```
+You should now have the moonbys binary in your go/bin directory
+
+```
+moonbys
+```
 
 ### Configure
 
-Your blockchain in development can be configured with `config.yml`. To learn more, see the [Starport docs](https://docs.starport.network).
-
-### Launch
-
-To launch your blockchain live on multiple nodes, use `starport network` commands. Learn more about [Starport Network](https://github.com/tendermint/spn).
-
-### Web Frontend
-
-Starport has scaffolded a Vue.js-based web app in the `vue` directory. Run the following commands to install dependencies and start the app:
+Create a wallet
 
 ```
-cd vue
-npm install
-npm run serve
+ moonbys keys add YOURWALLETNAME --keyring-backend os
 ```
 
-The frontend app is built using the `@starport/vue` and `@starport/vuex` packages. For details, see the [monorepo for Starport front-end development](https://github.com/tendermint/vue).
+This command will generate a new wallet, it will give you an address, a pubkey and a mnemonic phrase.
 
-## Release
-To release a new version of your blockchain, create and push a new tag with `v` prefix. A new draft release with the configured targets will be created.
+You will also be asked to create a password.
 
-```
-git tag v0.1
-git push origin v0.1
-```
+Make sure that you save your mnemonic phrase in a secure place, never share it with anyone and don't forget your keyring password.
 
-After a draft release is created, make your final changes from the release page and publish it.
-
-### Install
-To install the latest version of your blockchain node's binary, execute the following command on your machine:
+### Launch your Node
 
 ```
-curl https://get.starport.network/moonbys/pan@latest! | sudo bash
+moonbys init YOURNODE
 ```
-`moonbys/pan` should match the `username` and `repo_name` of the Github repository to which the source code was pushed. Learn more about [the install process](https://github.com/allinbits/starport-installer).
+
+You can choose any name that you want for your node. 
+
+Your node's name will be public in the network, especially if you decide to become a validator. 
+
+Download the genesis file into ~/.pan/config/
+
+```
+cd .pan/config
+```
+```
+wget urlcomingsoon
+```
+
+Add the published node ID and IP into the configuration file:
+
+```
+nano .pan/config/config.toml
+```
+Find the following line and add the node-id and IP
+
+```
+# Comma separated list of nodes to keep persistent connections to
+persistent_peers = "529ccadf9b1443dd64edc447d28392f8db1e2239@139.59.167.214:26656"
+```
+
+While you are in the config.toml file, go ahead and change the following line:
+
+```
+# A custom human readablename for this node
+moniker = "YourNodeNameHere"
+```
+Adjust fees
+
+```
+nano .pan/config/app.toml
+```
+
+Find the following line and adjust fees (change "0stake" to "0.001upan")
+
+```
+# The minimum gas prices a validator is willing to accept for processing a
+# transaction. A transaction's fees must meet the minimum of any denomination
+# specified in this config (e.g. 0.25token1;0.0001token2).
+minimum-gas-prices = "0.001upan"
+```
+
+### Start your node:
+
+```
+moonbys start
+```
+
+***
+
+## Congratulations, you are now part of the MOONBYS.com Pan Blockhain
+
+***
+
+## Become a validator in the MOONBYS.com Pan Blockchain
+
+Guide coming soon or explore the moonbys binary meanwhile
+
+***
 
 ## Learn more
 
+- [MOONBYS Docs](https://docs.moonbys.com/)
+- [MOONBYS Discord](https://discord.gg/yr5vqypJK2)
+- [MOONBYS Twitter](https://twitter.com/moonbys_)
+- [MOONBYS Telegram Announcements](t.me/moonbys)
+- [MOONBYS Telegram Chat](t.me/moonbys_chat)
 - [Starport](https://github.com/tendermint/starport)
 - [Starport Docs](https://docs.starport.network)
 - [Cosmos SDK documentation](https://docs.cosmos.network)
