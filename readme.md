@@ -1,6 +1,8 @@
-# pan
+# Pan
 
-**pan** is the first MOONBYS.com public blockchain and it is a blockchain built using Cosmos SDK and Tendermint and created with [Starport](https://github.com/tendermint/starport).
+**Pan** is the first **MOONBYS.com** public blockchain.
+
+It is a blockchain built with Cosmos SDK, Tendermint and created with [Starport](https://github.com/tendermint/starport).
 
 ***
 
