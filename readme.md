@@ -83,12 +83,13 @@ moonbys init YOURNODE
 
 You can choose any name that you want for your node. 
 
-Your node's name will be public in the network, especially if you decide to become a validator. 
+Your node's name will be public in the network. 
 
-Download the genesis file into ~/.pan/config/
+Delete default genesis file and download the Pan Chain genesis file into ~/.pan/config/
 
 ```
 cd .pan/config
+sudo rm -rf genesis.json
 ```
 ```
 wget https://moonbys.com/pan-chain/genesis.json
