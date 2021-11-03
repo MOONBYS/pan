@@ -107,13 +107,7 @@ Find the following line and add the node-id and IP
 persistent_peers = "529ccadf9b1443dd64edc447d28392f8db1e2239@139.59.167.214:26656"
 ```
 
-While you are in the config.toml file, go ahead and change the following line:
-
-```
-# A custom human readable name for this node
-moniker = "YourNodeNameHere"
-```
-Adjust fees
+Adjust fees 
 
 ```
 nano .pan/config/app.toml
@@ -142,9 +136,20 @@ moonbys start
 
 ## Become a validator in the MOONBYS.com Pan Blockchain
 
-Guide coming soon 
+Before setting up your validator node, make sure that you've already gone through the steps above and that your node is caught up with the chain.
 
-Meanwhile, you can explore the moonbys binary or the docs below.
+You can become a validator with this simple command:
+
+```
+moonbys tx staking create-validator --amount="atleast1000000upan" --pubkey="$(moonbys tendermint show-validator)" --moniker="YourMoniker" --chain-id="pan-chain" --commission-rate="0.10" --commission-max-rate="0.20" --commission-max-change-rate="0.01" --min-self-delegation="1" --fees="5000upan" --from="YourKeyName" --keyring-backend="os"
+```
+
+***
+
+To get some test tokens join our Discord server or Telegram chat below.
+
+You should also explore the moonbys binary and the docs below.
+
 
 ***
 
