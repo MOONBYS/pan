@@ -144,6 +144,21 @@ You can become a validator with this simple command:
 moonbys tx staking create-validator --amount="atleast1000000upan" --pubkey="$(moonbys tendermint show-validator)" --moniker="YourMoniker" --chain-id="pan-chain" --commission-rate="0.10" --commission-max-rate="0.20" --commission-max-change-rate="0.01" --min-self-delegation="1" --fees="5000upan" --from="YourKeyName" --keyring-backend="os"
 ```
 
+You can add the following flags to the previous command:
+
+```
+--website="https://your-validator.com" \
+--identity=A 16 digit code-key from keybase.io \
+--details="Your validator's description and details!" \
+```
+
+You can always edit your validator with:
+
+```
+moonbys tx staking edit-validator
+```
+
+
 ***
 
 To get some test tokens join our Discord server or Telegram chat below.
