@@ -134,6 +134,41 @@ moonbys start
 
 ***
 
+## Setup moonbys systemd service
+
+Make sure that you have stopped the chain with CTRL+C. You can always restart your node with ```moonbys start```. Setting up a systemd will make things simpler, it will keep your node running and it will make it auto-restart.
+
+```
+cd $HOME
+echo "[Unit]
+Description=Moonbys Node
+After=network-online.target
+[Service]
+User=${USER}
+ExecStart=$(which moonbys) start
+Restart=always
+RestartSec=3
+LimitNOFILE=4096
+[Install]
+WantedBy=multi-user.target
+" >moonbys.service
+```
+
+Enable and activate the MOONBYS service
+
+```
+sudo mv moonbys.service /lib/systemd/system/
+sudo systemctl enable moonbys.service && sudo systemctl start moonbys.service
+```
+
+Check the logs and confirm that the service is working
+
+```
+sudo journalctl -u moonbys -f
+```
+
+***
+
 ## Become a validator in the MOONBYS.com Pan Blockchain
 
 Before setting up your validator node, make sure that you've already gone through the steps above and that your node is caught up with the chain.

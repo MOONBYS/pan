@@ -1,6 +1,6 @@
 accounts:
   - name: MOONBYS-I
-    coins: ["250000000pan", "250000000000000upan", "500000000stake"]
+    coins: ["250000000pan", "250000000000000upan"]
 validator:
   name: MOONBYS-I
   staked: "100000000000000upan"
@@ -11,7 +11,7 @@ client:
     path: "vue/src/store"
 faucet:
   name: MOONBYS-I
-  coins: ["50000000pan", "500000000upan", "100000000stake"]
+  coins: ["50000000pan", "500000000upan"]
 build:
   binary: "moonbys"
   moniker: "MOONBYS-I"
