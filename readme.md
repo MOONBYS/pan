@@ -104,7 +104,7 @@ Find the following line and add the node-id and IP
 
 ```
 # Comma separated list of nodes to keep persistent connections to
-persistent_peers = "529ccadf9b1443dd64edc447d28392f8db1e2239@139.59.167.214:26656"
+persistent_peers = "3b4085e151b09d360de37c59e0da795df9b52b61@142.132.190.68:26656"
 ```
 
 Adjust fees 
