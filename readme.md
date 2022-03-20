@@ -17,7 +17,7 @@ These are the minimal hardware configs required for running a validator/sentry n
 * 200GB - 300GB SSD Disk space per year (NVMe disks are recommended)
 * 400 Mbit/s bandwidth
 
-> Please avoid cheap VPS providers as a main validator. You could use these as a cheap backup. (We do not recommend these. Use them at your own risk) We advise to use a shared dedicated server or a high-end NVMe VPS.
+> Please avoid cheap VPS providers as a mainnet validator. You could use these as a cheap backup or for testing. (We do not recommend these. Use them at your own risk) We advise to use a shared dedicated server or a high-end NVMe VPS.
 
 ## Get started
 
