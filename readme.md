@@ -12,10 +12,10 @@ In this guide you will find how to install the latest binary
 
 These are the minimal hardware configs required for running a validator/sentry node:
 
-* 8GB RAM
-* 4vCPUs (8vCPUs is recommended)
-* 200GB - 300GB SSD Disk space per year (NVMe disks are recommended)
-* 400 Mbit/s bandwidth
+* 4GB RAM
+* 2vCPUs (4vCPUs is recommended)
+* 100GB SSD Disk space per year (NVMe disks are recommended)
+* 100 Mbit/s bandwidth (Lower bandwidth may also work in devnet)
 
 > Please avoid cheap VPS providers as a mainnet validator. You could use these as a cheap backup or for testing. 
 > (We do not recommend these. Use them at your own risk) 
