@@ -4,21 +4,55 @@
 
 It is a blockchain built with Cosmos SDK, Tendermint and created with [Starport](https://github.com/tendermint/starport).
 
+In this guide you will find how to install the latest binary
+
 ***
+
+## Hardware Requirements
+
+These are the minimal hardware configs required for running a validator/sentry node:
+
+* 8GB RAM
+* 4vCPUs (8vCPUs is recommended)
+* 200GB - 300GB SSD Disk space per year (NVMe disks are recommended)
+* 400 Mbit/s bandwidth
+
+> Please avoid cheap VPS providers as a main validator. You could use these as a cheap backup. (We do not recommend these. Use them at your own risk) We advise to use a shared dedicated server or a high-end NVMe VPS.
 
 ## Get started
 
-Install Go
+* Make sure that your system is up to date. You should also install a utility named `jq` to read and navigate in JSON files and outputs. 
 
+```
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install -y build-essential curl wget jq
+```
+* Increase the default open files limit.
+If you don't raise this value, nodes will crash when the network grows large enough.
+
+```
+sudo su -c "echo 'fs.file-max = 65536' >> /etc/sysctl.conf"
+sudo sysctl -p
+```
+
+* Install GoLang
+You can find the official instructions at: https://golang.org/doc/install 
+
+1. Remove any old versions that you might have installed in your system
 ```
 apt purge golang-go
 apt autoremove
 
 rm -rf /usr/local/go
+```
+2. Download the software
+```
 wget -c https://golang.org/dl/go1.17.1.linux-amd64.tar.gz
 tar xvf go1.17.1.linux-amd64.tar.gz -C /usr/local
-
-# Update environment variables to include go
+```
+3. Update environment variables to include Go
+```
 cat >> ~/.profile << 'EOF'
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
@@ -28,32 +62,31 @@ EOF
 
 source ~/.profile
 ```
-
-Install Starport
-
-```
-curl https://get.starport.network/starport | bash
-```
+4. Verify that Go was installed correctly:
 
 ```
-sudo mv starport /usr/local/bin/
+go version
 ```
+You should see `go version go1.17.7 linux/amd64`
 
-Clone this repository
+## Download and install the latest MOONBYS binary
 
-```
-git clone https://github.com/MOONBYS/pan.git
-```
-
-### Build your node
+1. Check the latest version at https://github.com/MOONBYS/pan/releases (If needed, change the command below to the latest version)
 
 ```
-cd pan
+cd $HOME
+wget -nc https://github.com/moonbys/pan/releases/download/v0.2.1/moonbys
+chmod +x moonbys
+sudo mv moonbys /usr/local/bin/
+source ~/.profile
 ```
+2. Confirm that you downloaded the correct version
+
 ```
-starport chain build
+moonbys version
 ```
-You should now have the moonbys binary in your go/bin directory
+
+You should now have the moonbys binary in your /usr/local/bin/ directory
 
 ```
 moonbys
