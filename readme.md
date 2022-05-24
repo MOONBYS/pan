@@ -1,3 +1,9 @@
+Pan chain has [ended](docs/pan-chain-ends-1.png) to make way for our mainnet.
+
+This repo has been archived.
+
+***
+
 # Pan
 
 **Pan** is the first **MOONBYS.com** public blockchain testnet.
